@@ -14,7 +14,7 @@
       justify-content: center;
       height: 100vh;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      background: linear-gradient(135deg, #f4e176c1, #f8ed78);
       color: #fff;
     }
 
@@ -35,19 +35,21 @@
   </style>
 </head>
 <body>
-  <h1>Scan to Play the Car Game!</h1>
+  <h1>Scan to Play the LTU-kart Game!</h1>
   <p>Scan this QR code on your mobile device to access the game.</p>
-  <div id="qr-code"></div>
+  <canvas id="qr-code"></canvas> <!-- Changed div to canvas -->
 
   <!-- Include the QRCode.js library -->
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <script>
     // URL of the main game page (replace this with your actual URL)
-    const gameUrl = "http://localhost:5500/index.html";  // Localhost for testing, replace with your actual URL if needed
+    const gameUrl = "http://localhost:5500/index.html";  // Replace with your actual game URL
+
+    // Select the canvas element for the QR code
+    const qrCodeCanvas = document.getElementById('qr-code');
 
     // Generate the QR code that links to the game URL
-    const qrCodeContainer = document.getElementById('qr-code');
-    QRCode.toCanvas(qrCodeContainer, gameUrl, {
+    QRCode.toCanvas(qrCodeCanvas, gameUrl, {
       width: 200, // Size of the QR code
       margin: 2,  // Margin around the QR code
       color: {
@@ -55,13 +57,12 @@
         light: "#ffffff" // Background color
       }
     }, function (error) {
-      // Error handling for QR code generation
       if (error) {
-        console.error("QR Code generation error:", error); // This will log any errors
+        console.error("QR Code generation error:", error); // Logs the error
       } else {
-        console.log("QR code generated successfully!"); // This will log success message
+        console.log("QR code generated successfully!"); // Logs success
       }
-    });  // <-- Closing the QRCode function call here
+    });
   </script>
 </body>
 </html>
