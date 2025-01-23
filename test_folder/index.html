@@ -1,86 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Game - Welcome</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #4e8cde, #2069b2);
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTU-kart Game - Start</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    p {
-      margin-bottom: 30px;
-      font-size: 1.2em;
-    }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 400px;
+        }
 
-    input[type="text"] {
-      width: 80%;
-      max-width: 300px;
-      padding: 10px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1em;
-      outline: none;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        label {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-    button {
-      padding: 10px 20px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 25px;
-      background: #fff;
-      color: #ff7eb3;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease-in-out;
-    }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
 
-    button:hover {
-      background: #ff3e71;
-      color: #fff;
-      transform: scale(1.05);
-    }
-  </style>
+        button {
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 200px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            input[type="text"], button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            button {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to the LTU-kart Game!</h1>
-  <p>Please enter your name to get started.</p>
-  <input type="text" id="player-name" placeholder="Enter your name" />
-  <button id="start-button">Start Game</button>
-
-  <script>
-    const startButton = document.getElementById('start-button');
-    const playerNameInput = document.getElementById('player-name');
-
-    startButton.addEventListener('click', () => {
-      const playerName = playerNameInput.value.trim();
-      if (playerName) {
-        alert(`Welcome, ${playerName}! Let's start the game!`);
-        // Redirect to the game page or start the game logic here
-        // Example: window.location.href = "game.html";
-      } else {
-        alert('Please enter your name to start.');
-      }
-    });
-  </script>
+    <h1>Welcome to the LTU-kart Game</h1>
+    <form action="" method="get">
+        <label for="name">Enter your name to start playing:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+        <button type="submit">Start Game</button>
+    </form>
+    <footer>
+        &copy; 2025 LTU. All rights reserved.
+    </footer>
 </body>
 </html>
